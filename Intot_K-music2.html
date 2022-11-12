@@ -22,9 +22,15 @@
             <div id="title">どんなジャンルききたい？</div>
         </div>
         <ul id="category">
-            <li id="pop">K-POP</li>
-            <li id="hiphop">K-HIPHOP</li>
-            <li id="rock">K-ROCK</li>
+            <button id="select-button1">
+                <li id="pop">K-POP</li>
+            </button>
+            <button id="select-button2">
+                <li id="hiphop">K-HIPHOP</li>
+            </button>
+            <button id="select-button3">
+                <li id="rock">K-ROCK</li>
+            </button>
         </ul>
 
         <!-- 3ジャンルから細分化 -->
@@ -173,8 +179,8 @@
         <script>
             //   POPクリックの場合 
             $("#pop").click(function () {
-                $("#hiphop").hide();
-                $("#rock").hide();
+                $("#select-button2").hide();
+                $("#select-button3").hide();
                 $("#pop1").show();
                 $("#pop2").show();
             });
@@ -183,13 +189,15 @@
             $("#pop1").click(function () {
                 // alert("#pop1")
                 $("#title").hide();
-                $("#pop").hide();
+                $("#select-button1").hide();
                 $("#pop2").hide();
                 $("#group1").show();
 
             });
             // かわいいを選択した場合
             $("#pop2").click(function () {
+                $("#title").hide();
+                $("#select-button1").hide();
                 $("#pop1").hide();
                 $("#group2").show();
                 // $("#pop1").append("<a href="#group1"</a>);
@@ -199,14 +207,15 @@
             //   hiphopクリックの場合 
             $("#hiphop").click(function () {
                 // $("#hiphop").append("<p id=hp1>エモい</p>", "<p id=hp2>ゴリゴリ</p>");
-                $("#pop").hide();
-                $("#rock").hide();
+                $("#select-button1").hide();
+                $("#select-button3").hide();
                 $("#hp1").show();
                 $("#hp2").show();
             });
             //エモいを選択した場合
             $("#hp1").click(function () {
                 // alert("#hp1")
+                $("#select-button2").hide();
                 $("#hp2").hide();
                 $("#group3").show();
             });
@@ -214,6 +223,7 @@
             //ゴリゴリを選択した場合
             $("#hp2").click(function () {
                 // alert("#hp1")
+                $("#select-button2").hide();
                 $("#hp1").hide();
                 $("#group4").show();
             });
@@ -221,20 +231,22 @@
             //   rockクリックの場合 
             $("#rock").click(function () {
                 // $("#rock").append("<p id=rk1>UKロック好きに</p>", "<p id=rk2>唯一無二の世界観</p>");
-                $("#hiphop").hide();
-                $("#pop").hide();
+                $("#select-button1").hide();
+                $("#select-button2").hide();
                 $("#rk1").show();
                 $("#rk2").show();
             });
             // UKロック好きを選択した場合
             $("#rk1").click(function () {
                 // alert("#hp1")
+                $("#select-button3").hide();
                 $("#rk2").hide();
                 $("#group5").show();
             });
             // 唯一無二を選択した場合
             $("#rk2").click(function () {
                 // alert("#hp1")
+                $("#select-button3").hide();
                 $("#rk1").hide();
                 $("#group6").show();
             });
